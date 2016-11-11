@@ -27,7 +27,7 @@ export default class AwesomeProject extends Component {
         Notificare.enableNotifications();
     });
 
-    DeviceEventEmitter.addListener('didRegisterDevice', function(e: Event) {
+    DeviceEventEmitter.addListener('didReceiveDeviceToken', function(e: Event) {
         console.log(e);
 
       	Notificare.registerDevice(e.device, null, null, (error, msg) => {
@@ -45,6 +45,9 @@ export default class AwesomeProject extends Component {
       console.log(e);
     });
 
+    DeviceEventEmitter.addListener('onNotificationOpened', function(e: Event) {
+      Notificare.openNotification(e);
+    });
   }
 
   render() {
