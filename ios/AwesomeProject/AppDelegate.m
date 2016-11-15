@@ -40,6 +40,15 @@
 }
 
 
+- (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(nonnull id)annotation{
+  
+  [NotificareReactNativeIOS  handleOpenURL:url];
+
+  return YES;
+}
+
+
+
 #pragma APNS Delegates
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 
