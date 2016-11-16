@@ -11,7 +11,8 @@ import {
   NativeModules,
   DeviceEventEmitter,
   Text,
-  View
+  View,
+  PermissionsAndroid
 } from 'react-native';
 
 const Notificare = NativeModules.NotificareReactNativeAndroid;
@@ -26,6 +27,19 @@ export default class AwesomeProject extends Component {
     DeviceEventEmitter.addListener('onReady', function(e: Event) {
         console.log(e);
         Notificare.enableNotifications();
+        (async function() {
+          try {
+            let granted = await PermissionsAndroid.requestPermission(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION, {
+              'title': 'Location Permission',
+              'message': 'We need your location so we can send you relevant push notifications'
+            });
+            if (granted) {
+              Notificare.enableLocationUpdates()
+            }
+          } catch (err) {
+            console.warn(err)
+          }
+        }());
     });
 
     DeviceEventEmitter.addListener('didReceiveDeviceToken', function(e: Event) {
