@@ -45,6 +45,7 @@ export default class AwesomeProject extends Component {
     });
 
     this.eventEmitter.addListener('didReceiveDeviceToken',(data) => {
+      console.log(data);
 
       Notificare.registerDevice(data.device, null, null, (error, data) => {
 
@@ -74,6 +75,7 @@ export default class AwesomeProject extends Component {
     });
 
     this.eventEmitter.addListener('notificationOpened',(data) => {
+        console.log(data);
         Notificare.openNotification(data);
     });
 
@@ -82,6 +84,7 @@ export default class AwesomeProject extends Component {
     });
 
     this.eventEmitter.addListener('badge',(data) => {
+        console.log(data);
         this._reloadInbox();
     });
 

@@ -19,6 +19,7 @@ const Notificare = NativeModules.NotificareReactNativeAndroid;
 export default class AwesomeProject extends Component {
 
   componentWillMount() {
+    console.log('componentWillMount');
 
     Notificare.launch();
 
@@ -41,13 +42,19 @@ export default class AwesomeProject extends Component {
     });
 
 
-    DeviceEventEmitter.addListener('onNotificationReceived', function(e: Event) {
+    DeviceEventEmitter.addListener('onNotificationReceived', (e: Event) => {
       console.log(e);
     });
 
-    DeviceEventEmitter.addListener('onNotificationOpened', function(e: Event) {
+    DeviceEventEmitter.addListener('onNotificationOpened', (e: Event) => {
+      console.log(e);
       Notificare.openNotification(e);
     });
+  }
+
+  componentWillUnmount() {
+    console.log('componentWillUnmount');
+    DeviceEventEmitter.removeAllListeners();
   }
 
   render() {

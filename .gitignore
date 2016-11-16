@@ -39,3 +39,4 @@ buck-out/
 android/app/libs
 android/keystores/debug.keystore
 android/app/src/main/assets/notificareconfig.properties
+android/app/google-services.json
