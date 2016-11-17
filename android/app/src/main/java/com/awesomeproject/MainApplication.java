@@ -1,20 +1,18 @@
 package com.awesomeproject;
 
 import android.app.Application;
-import android.util.Log;
 
 import com.facebook.react.ReactApplication;
-import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 
-import re.notifica.Notificare;
-
 import java.util.Arrays;
 import java.util.List;
 
-import re.notifica.reactnative.*;
+import re.notifica.Notificare;
+import re.notifica.reactnative.NotificarePackage;
+import re.notifica.reactnative.NotificareReceiver;
 
 
 public class MainApplication extends Application implements ReactApplication {
@@ -22,6 +20,7 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+        Notificare.shared().setDebugLogging(BuildConfig.DEBUG);
         Notificare.shared().launch(this);
         Notificare.shared().setIntentReceiver(NotificareReceiver.class);
         Notificare.shared().setAllowJavaScript(true);

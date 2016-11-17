@@ -82,7 +82,7 @@ export default class AwesomeProject extends Component {
 
     DeviceEventEmitter.addListener('notificationOpened', (e: Event) => {
       console.log(e);
-      Notificare.openNotification(e);
+      Notificare.openNotification(e.notification);
     });
   }
 
