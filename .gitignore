@@ -21,9 +21,10 @@ DerivedData
 *.ipa
 *.xcuserstate
 project.xcworkspace
-ios/AwesomeProject/Notificare.plist
+
 # Android/IJ
 #
+*.iml
 .idea
 .gradle
 local.properties
@@ -38,5 +39,3 @@ buck-out/
 \.buckd/
 android/app/libs
 android/keystores/debug.keystore
-android/app/src/main/assets/notificareconfig.properties
-android/app/google-services.json

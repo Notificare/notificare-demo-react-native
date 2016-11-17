@@ -240,11 +240,11 @@ export default class AwesomeProject extends Component {
   }
 
   _reloadInbox (){
-    Notificare.fetchInbox(null, 0, 100, (error, inboxItems) => {
+    Notificare.fetchInbox(null, 0, 100, (error, data) => {
             if (!error) {
-              console.log(inboxItems);
+              console.log(data);
               this.setState({
-                dataSource : this.state.dataSource.cloneWithRows(inboxItems)
+                dataSource : this.state.dataSource.cloneWithRows(data.inbox)
               });
             }
         });
