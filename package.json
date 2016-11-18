@@ -9,7 +9,7 @@
     "bundle-android": "react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --sourcemap-output android/app/src/main/assets/index.android.map --assets-dest android/app/src/main/res/"
   },
   "dependencies": {
-    "notificare-push-lib-react-native": "file:../notificare-push-lib-react-native",
+    "notificare-push-lib-react-native": "^1.0.0",
     "react": "15.3.2",
     "react-native": "0.36.0"
   },
