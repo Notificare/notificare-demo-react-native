@@ -59,7 +59,7 @@
     }];
 }
 
-// Required for the registrationError event.
+
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
   NSLog(@"didFailToRegisterForRemoteNotificationsWithError %@", error);
