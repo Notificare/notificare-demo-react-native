@@ -1,5 +1,4 @@
 rootProject.name = 'AwesomeProject'
-
 include ':app'
 include ':notificare-push-lib-react-native'
 project(':notificare-push-lib-react-native').projectDir = file('../node_modules/notificare-push-lib-react-native/android')

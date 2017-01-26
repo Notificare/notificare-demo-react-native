@@ -20,7 +20,7 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        Notificare.shared().setDebugLogging(BuildConfig.DEBUG);
+        Notificare.shared().setDebugLogging(true);
         Notificare.shared().launch(this);
         Notificare.shared().setIntentReceiver(NotificareReceiver.class);
         Notificare.shared().setAllowJavaScript(true);
