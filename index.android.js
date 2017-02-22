@@ -58,7 +58,7 @@ export default class AwesomeProject extends Component {
             });
             (async function() {
               try {
-                let granted = await PermissionsAndroid.requestPermission(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION, {
+                let granted = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION, {
                   'title': 'Location Permission',
                   'message': 'We need your location so we can send you relevant push notifications'
                 });
