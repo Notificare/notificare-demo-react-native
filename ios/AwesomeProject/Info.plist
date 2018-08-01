@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>AwesomeProject</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -28,17 +30,17 @@
 		<dict>
 			<key>localhost</key>
 			<dict>
-				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
 			</dict>
 		</dict>
 	</dict>
-	<key>NSCameraUsageDescription</key>
-	<string>We would like to use your location to easily provide your location in  maps or  give you directions.</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>We will need to make use of your location to present relevant information about offers around you.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+  <key>NSLocationWhenInUseUsageDescription</key>
+  <string>We need your location</string>
+  <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+  <string>We need your location</string>
+  <key>NSLocationAlwaysUsageDescription</key>
+  <string>We need your location</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
