@@ -1,6 +1,10 @@
 package com.awesomeproject;
 
+import android.os.Bundle;
+
 import com.facebook.react.ReactActivity;
+
+import re.notifica.util.Log;
 
 public class MainActivity extends ReactActivity {
 

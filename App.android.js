@@ -7,9 +7,10 @@
 import React, { Component } from 'react';
 import {
     AppRegistry,
-    ListView,
+    FlatList,
     StyleSheet,
     Text,
+    Linking,
     NativeModules,
     DeviceEventEmitter,
     TouchableHighlight,
@@ -24,13 +25,10 @@ export default class App extends Component {
 
     constructor(props){
         super(props);
-        const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         this.state = {
-            dataSource: ds.cloneWithRows([])
+            dataSource: []
         };
-
         this._reloadInbox();
-
     }
 
     componentWillMount() {
@@ -39,9 +37,21 @@ export default class App extends Component {
 
         Notificare.mount();
 
+        Linking.getInitialURL().then((url) => {
+            if (url) {
+                console.log('Initial url is: ' + url);
+            }
+        }).catch(err => console.error('An error occurred', err));
+
+        Linking.addEventListener('url', this._handleOpenURL);
+
         DeviceEventEmitter.addListener('ready', (data) => {
             console.log(data);
             Notificare.enableNotifications();
+        });
+
+        DeviceEventEmitter.addListener('didClickURL', (data) => {
+            console.log(data);
         });
 
         DeviceEventEmitter.addListener('didReceiveDeviceToken',(data) => {
@@ -91,43 +101,47 @@ export default class App extends Component {
     componentWillUnmount() {
         console.log('componentWillUnmount');
         Notificare.unmount();
+        Linking.removeEventListener('url', this._handleOpenURL);
         DeviceEventEmitter.removeAllListeners();
     }
 
-    _reloadInbox (){
+    _handleOpenURL(event) {
+        console.log("Deeplink URL: " + event.url);
+    }
+
+    _reloadInbox() {
         Notificare.fetchInbox(null, 0, 100, (error, data) => {
             if (!error) {
                 console.log(data);
                 this.setState({
-                    dataSource : this.state.dataSource.cloneWithRows(data.inbox)
+                    dataSource : data.inbox
                 });
             }
         });
     }
 
-
     render() {
         return (
             <View style={styles.view}>
-                <ListView
-                    enableEmptySections={true}
-                    dataSource={this.state.dataSource}
-                    renderRow={this.renderRow}
+                <FlatList
+                    data={this.state.dataSource}
+                    renderItem={this.renderRow}
+                    keyExtractor={(item, index) => index.toString()}
                 />
             </View>
         );
     }
 
-    renderRow (rowData) {
+    renderRow ({item}) {
         return (
             <TouchableHighlight>
                 <View>
                     <View style={styles.row}>
                         <Text style={styles.text}>
-                            {rowData.message}
+                            {item.message}
                         </Text>
                         <Text style={styles.text}>
-                            {rowData.time}
+                            {item.time}
                         </Text>
                     </View>
                 </View>
