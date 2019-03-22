@@ -40,6 +40,9 @@ export default class App extends Component {
 
         this.eventEmitter.addListener('ready', (data) => {
             console.log(data);
+            Notificare.fetchDevice((error, data) => {
+                console.log(data);
+            });
             Notificare.registerForNotifications();
         });
 

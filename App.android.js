@@ -39,7 +39,7 @@ export default class App extends Component {
 
         Linking.getInitialURL().then((url) => {
             if (url) {
-                console.log('Initial url is: ' + url);
+                this._handleOpenURL(url);
             }
         }).catch(err => console.error('An error occurred', err));
 
@@ -47,6 +47,9 @@ export default class App extends Component {
 
         DeviceEventEmitter.addListener('ready', (data) => {
             console.log(data);
+            Notificare.fetchDevice((error, data) => {
+                console.log(data);
+            });
             Notificare.enableNotifications();
         });
 

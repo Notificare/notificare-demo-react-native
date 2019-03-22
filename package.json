@@ -7,7 +7,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "notificare-push-lib-react-native": "file:../notificare-push-lib-react-native",
+    "notificare-push-lib-react-native": "1.4.1",
     "react": "16.8.3",
     "react-native": "0.59.1"
   },
