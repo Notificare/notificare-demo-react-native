@@ -14,8 +14,7 @@ import {
     NativeModules,
     DeviceEventEmitter,
     TouchableHighlight,
-    View,
-    PermissionsAndroid
+    View
 } from 'react-native';
 
 
@@ -28,14 +27,13 @@ export default class App extends Component {
         this.state = {
             dataSource: []
         };
-        this._reloadInbox();
     }
 
     componentWillMount() {
 
         console.log("componentWillMount");
 
-        Notificare.mount();
+        Notificare.launch();
 
         Linking.getInitialURL().then((url) => {
             if (url) {
@@ -45,58 +43,67 @@ export default class App extends Component {
 
         Linking.addEventListener('url', this._handleOpenURL);
 
-        DeviceEventEmitter.addListener('ready', (data) => {
+        DeviceEventEmitter.addListener('ready', async (data) => {
             console.log(data);
-            Notificare.fetchDevice((error, data) => {
-                console.log(data);
+            console.log(await Notificare.fetchDevice());
+            Notificare.registerForNotifications();
+            console.log(await Notificare.fetchTags());
+            await Notificare.addTag("react-native");
+            const granted = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION, {
+                'title': 'Location Permission',
+                'message': 'We need your location so we can send you relevant push notifications'
             });
-            Notificare.enableNotifications();
+            if (granted) {
+                Notificare.startLocationUpdates()
+            }
+            try {
+                await Notificare.login("joris@notifica.re", "Test123!")
+            } catch (err) {
+                console.warn(err.message);
+            }
         });
 
-        DeviceEventEmitter.addListener('didClickURL', (data) => {
+        DeviceEventEmitter.addListener('urlClickedInNotification', (data) => {
             console.log(data);
         });
 
-        DeviceEventEmitter.addListener('didReceiveDeviceToken',(data) => {
+        DeviceEventEmitter.addListener('deviceRegistered', (data) => {
             console.log(data);
+        });
 
-            Notificare.registerDevice(data.device, null, null, (error, data) => {
-                if (!error) {
-                    Notificare.fetchTags((error, data) => {
-                        if (!error) {
-                            console.log(data);
-                            Notificare.addTags(["react-native"], (error, data) => {
-                                if (!error) {
-                                    console.log(data);
-                                }
-                            });
-                        }
-                    });
-                    (async function() {
-                        try {
-                            let granted = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION, {
-                                'title': 'Location Permission',
-                                'message': 'We need your location so we can send you relevant push notifications'
-                            });
-                            if (granted) {
-                                Notificare.enableLocationUpdates()
-                            }
-                        } catch (err) {
-                            console.warn(err)
-                        }
-                    }());
+        DeviceEventEmitter.addListener('remoteNotificationReceivedInBackground', (data) => {
+            console.log(data);
+            Notificare.presentNotification(data);
+        });
+
+        DeviceEventEmitter.addListener('remoteNotificationReceivedInForeground', (data) => {
+            console.log(data);
+        });
+
+        DeviceEventEmitter.addListener('badgeUpdated', (data) => {
+            console.log(data);
+        });
+
+        DeviceEventEmitter.addListener('inboxLoaded', (data) => {
+            console.log(data);
+            this.setState({
+                dataSource: data
+            });
+        });
+
+        DeviceEventEmitter.addListener('activationTokenReceived', async (data) => {
+            console.log(data);
+            if (data && data.token) {
+                try {
+                    await Notificare.validateAccount(data.token);
+                } catch (err) {
+                    console.warn(err.message);
                 }
-            });
+            }
         });
 
-        DeviceEventEmitter.addListener('notificationOpened',(data) => {
+        DeviceEventEmitter.addListener('resetPasswordTokenReceived', (data) => {
             console.log(data);
-            Notificare.openNotification(data.notification);
-        });
-
-        DeviceEventEmitter.addListener('notificationReceived',(data) => {
-            console.log(data);
-            this._reloadInbox();
         });
 
     }
@@ -108,20 +115,10 @@ export default class App extends Component {
         DeviceEventEmitter.removeAllListeners();
     }
 
-    _handleOpenURL(event) {
-        console.log("Deeplink URL: " + event.url);
+    _handleOpenURL(url) {
+        console.log("Deeplink URL: " + url);
     }
 
-    _reloadInbox() {
-        Notificare.fetchInbox(null, 0, 100, (error, data) => {
-            if (!error) {
-                console.log(data);
-                this.setState({
-                    dataSource : data.inbox
-                });
-            }
-        });
-    }
 
     render() {
         return (
@@ -137,7 +134,7 @@ export default class App extends Component {
 
     renderRow ({item}) {
         return (
-            <TouchableHighlight>
+            <TouchableHighlight onPress={() => Notificare.presentInboxItem(item)}>
                 <View>
                     <View style={styles.row}>
                         <Text style={styles.text}>
@@ -151,6 +148,7 @@ export default class App extends Component {
             </TouchableHighlight>
         );
     }
+
 }
 
 const styles = StyleSheet.create({

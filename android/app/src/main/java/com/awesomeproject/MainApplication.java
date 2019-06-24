@@ -3,9 +3,9 @@ package com.awesomeproject;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import re.notifica.reactnative.NotificarePackage;
 import re.notifica.Notificare;
 import re.notifica.reactnative.NotificareReceiver;
-import re.notifica.reactnative.NotificarePackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -26,7 +26,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new NotificarePackage()
+          new NotificarePackage()
       );
     }
 
@@ -49,6 +49,5 @@ public class MainApplication extends Application implements ReactApplication {
     Notificare.shared().launch(this);
     Notificare.shared().createDefaultChannel();
     Notificare.shared().setIntentReceiver(NotificareReceiver.class);
-    Notificare.shared().setAllowJavaScript(true);
   }
 }

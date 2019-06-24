@@ -42,51 +42,46 @@
 #endif
 }
 
-- (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(nonnull id)annotation{
-  
-  [NotificareReactNativeIOS  handleOpenURL:url];
-  
-  return YES;
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    [NotificareReactNativeIOS handleOpenURL:url withOptions:nil];
+    return YES;
+}
+
+- (void)notificarePushLib:(NotificarePushLib *)library didReceiveLaunchURL:(NSURL *)launchURL {
+    [NotificareReactNativeIOS handleOpenURL:launchURL withOptions:nil];
+}
+
+
+-(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    [NotificareReactNativeIOS handleOpenURL:url withOptions:options];
+    return YES;
 }
 
 #pragma APNS Delegates
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-  
-  [NotificareReactNativeIOS registerDevice:deviceToken completionHandler:^(NSDictionary * _Nonnull info) {
-    //
-  } errorHandler:^(NSError * _Nonnull error) {
-    //
-  }];
+//Required to handle device registrations
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(nonnull NSData *)deviceToken {
+	[NotificareReactNativeIOS didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(nonnull NSDictionary *)userInfo fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHandler {
 
-- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
-{
-  NSLog(@"didFailToRegisterForRemoteNotificationsWithError %@", error);
-}
+	[NotificareReactNativeIOS didReceiveRemoteNotification:userInfo completionHandler:^(id  _Nullable response, NSError * _Nullable error) {
+		if (!error) {
+			completionHandler(UIBackgroundFetchResultNewData);
+		} else {
+			completionHandler(UIBackgroundFetchResultNoData);
+		}
+	}];
 
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
-  
-  [NotificareReactNativeIOS handleNotification:userInfo forApplication:application completionHandler:^(NSDictionary * _Nonnull info) {
-    completionHandler(UIBackgroundFetchResultNewData);
-  } errorHandler:^(NSError * _Nonnull error) {
-    completionHandler(UIBackgroundFetchResultNoData);
-  }];
-  
 }
 
 /*
  * iOS 9 and below requires this delegate to handle lock screen actions
  */
-- (void)application:(UIApplication *)application handleActionWithIdentifier:(nullable NSString *)identifier forRemoteNotification:(nonnull NSDictionary *)userInfo withResponseInfo:(nonnull NSDictionary *)responseInfo completionHandler:(nonnull void (^)())completionHandler {
-  
-  
-  [NotificareReactNativeIOS handleAction:identifier forNotification:userInfo withData:responseInfo completionHandler:^(NSDictionary *info) {
-    completionHandler(info);
-  } errorHandler:^(NSError *error) {
-    completionHandler(error);
-  }];
-  
+-(void)application:(UIApplication *)application handleActionWithIdentifier:(nullable NSString *)identifier forRemoteNotification:(nonnull NSDictionary *)userInfo withResponseInfo:(nonnull NSDictionary *)responseInfo completionHandler:(nonnull void (^)())completionHandler{
+	[[NotificarePushLib shared] handleActionWithIdentifier:identifier forRemoteNotification:userInfo withResponseInfo:responseInfo completionHandler:^(id  _Nullable response, NSError * _Nullable error) {
+		completionHandler();
+	}];
 }
 
 @end

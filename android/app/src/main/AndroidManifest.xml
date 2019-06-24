@@ -30,13 +30,31 @@
               <category android:name="android.intent.category.BROWSABLE" />
               <data android:scheme="@string/app_url_scheme" />
           </intent-filter>
+          <intent-filter>
+              <action android:name="android.intent.action.VIEW" />
+              <category android:name="android.intent.category.DEFAULT" />
+              <category android:name="android.intent.category.BROWSABLE" />
+              <data
+                      android:host="push.notifica.re"
+                      android:pathPrefix="/oauth/resetpassword/${notificareAppId}"
+                      android:scheme="https"/>
+          </intent-filter>
+          <intent-filter>
+              <action android:name="android.intent.action.VIEW" />
+              <category android:name="android.intent.category.DEFAULT" />
+              <category android:name="android.intent.category.BROWSABLE" />
+              <data
+                      android:host="push.notifica.re"
+                      android:pathPrefix="/oauth/validate/${notificareAppId}"
+                      android:scheme="https"/>
+          </intent-filter>
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
         <activity
                 android:name="re.notifica.ui.NotificationActivity"
-                android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+                android:theme="@style/AppTheme.Translucent"
                 android:configChanges="keyboardHidden|orientation|screenSize"
-                android:hardwareAccelerated="true"/>
+                android:hardwareAccelerated="true" />
 
         <activity
                 android:name="re.notifica.ui.PassbookActivity"
@@ -48,7 +66,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data
                         android:host="push.notifica.re"
-                        android:pathPrefix="/pass/forapplication/{notificareAppId}"
+                        android:pathPrefix="/pass/forapplication/${notificareAppId}"
                         android:scheme="https" />
             </intent-filter>
         </activity>
