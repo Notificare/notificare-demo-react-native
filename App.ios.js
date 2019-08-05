@@ -36,14 +36,14 @@ export default class App extends Component {
 
         Notificare.launch();
 
-        this.eventEmitter.addListener('ready', (data) => {
+        this.eventEmitter.addListener('ready', async (data) => {
             console.log(data);
             console.log(await Notificare.fetchDevice());
             Notificare.registerForNotifications();
             Notificare.startLocationUpdates();
         });
 
-        this.eventEmitter.addListener('deviceRegistered',(data) => {
+        this.eventEmitter.addListener('deviceRegistered',async (data) => {
             console.log(data);
 
             this.userNotificationSettings();

@@ -58,7 +58,7 @@
 		A950D2FB211271890029AABC /* NotificareTags.plist in Resources */ = {isa = PBXBuildFile; fileRef = A950D2F7211271880029AABC /* NotificareTags.plist */; };
 		A950D2FC211271890029AABC /* NotificareManagedModels.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A950D2F8211271880029AABC /* NotificareManagedModels.bundle */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
-		727234F2959F46AFAD668DCC /* libNotificarePushLibReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9BB562692454208A0B17DDC /* libNotificarePushLibReactNative.a */; };
+		A8A69242FDEC4157BB0ACC21 /* libNotificarePushLibReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B9073F612F47B286CB4411 /* libNotificarePushLibReactNative.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -387,8 +387,8 @@
 		A950D2F8211271880029AABC /* NotificareManagedModels.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NotificareManagedModels.bundle; sourceTree = "<group>"; };
 		A950D2FD211272250029AABC /* AwesomeProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = AwesomeProject.entitlements; path = AwesomeProject/AwesomeProject.entitlements; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
-		1825A87253124F64A3E051A4 /* NotificarePushLibReactNative.xcodeproj */ = {isa = PBXFileReference; name = "NotificarePushLibReactNative.xcodeproj"; path = "../node_modules/notificare-push-lib-react-native/ios/NotificarePushLibReactNative.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		C9BB562692454208A0B17DDC /* libNotificarePushLibReactNative.a */ = {isa = PBXFileReference; name = "libNotificarePushLibReactNative.a"; path = "libNotificarePushLibReactNative.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		A339AB3455064319AE1B37FD /* NotificarePushLibReactNative.xcodeproj */ = {isa = PBXFileReference; name = "NotificarePushLibReactNative.xcodeproj"; path = "../node_modules/notificare-push-lib-react-native/ios/NotificarePushLibReactNative.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		B5B9073F612F47B286CB4411 /* libNotificarePushLibReactNative.a */ = {isa = PBXFileReference; name = "libNotificarePushLibReactNative.a"; path = "libNotificarePushLibReactNative.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -433,7 +433,7 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				727234F2959F46AFAD668DCC /* libNotificarePushLibReactNative.a in Frameworks */,
+				A8A69242FDEC4157BB0ACC21 /* libNotificarePushLibReactNative.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,7 +643,7 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-				1825A87253124F64A3E051A4 /* NotificarePushLibReactNative.xcodeproj */,
+				A339AB3455064319AE1B37FD /* NotificarePushLibReactNative.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -686,7 +686,7 @@
 		A950D29B21126C3B0029AABC /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				E5E7E5D1B89948C68EBC0617 /* libNotificarePushLibReactNative.a */,
+				C9BB562692454208A0B17DDC /* libNotificarePushLibReactNative.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
