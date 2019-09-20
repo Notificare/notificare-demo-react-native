@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -34,7 +35,32 @@
 		2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16E6891FA4F8E400B85C8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* AwesomeProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* AwesomeProjectTests.m */; };
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
+		5D90B5CD2335259D00179F7F /* NotificareManagedModels.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5D90B5CA2335259D00179F7F /* NotificareManagedModels.bundle */; };
+		5D90B5CE2335259D00179F7F /* DefaultTheme.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5D90B5CB2335259D00179F7F /* DefaultTheme.bundle */; };
+		5D90B5CF2335259D00179F7F /* Notificare.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D90B5CC2335259D00179F7F /* Notificare.plist */; };
+		5D90B5D823352B5C00179F7F /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D90B5D723352B5C00179F7F /* NotificationService.m */; };
+		5D90B5DC23352B5C00179F7F /* notification.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5D90B5D423352B5B00179F7F /* notification.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5D90B5E223352BC900179F7F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D90B5E123352BC800179F7F /* AVFoundation.framework */; };
+		5D90B5E323352BCF00179F7F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A950D2CD21126D600029AABC /* CoreLocation.framework */; };
+		5D90B5E423352BD500179F7F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A950D2D421126D610029AABC /* CoreData.framework */; };
+		5D90B5E523352BDC00179F7F /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A950D2CE21126D600029AABC /* PassKit.framework */; };
+		5D90B5E623352BE200179F7F /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A950D2CF21126D600029AABC /* UserNotifications.framework */; };
+		5D90B5E723352BE700179F7F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A950D2CA21126D600029AABC /* MobileCoreServices.framework */; };
+		5D90B5E823352BEE00179F7F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A950D2D321126D610029AABC /* MessageUI.framework */; };
+		5D90B5E923352BF600179F7F /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A950D2D521126D610029AABC /* libicucore.tbd */; };
+		5D90B5EA23352BFD00179F7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A950D2D021126D600029AABC /* UIKit.framework */; };
+		5D90B5EB23352C0A00179F7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A950D2E621126DAC0029AABC /* Foundation.framework */; };
+		5D90B5EC23352C1300179F7F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A950D2C621126D5F0029AABC /* CoreGraphics.framework */; };
+		5D90B5ED23352C2200179F7F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A950D2C821126D5F0029AABC /* MapKit.framework */; };
+		5D90B5EE23352C2E00179F7F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A950D2D121126D600029AABC /* SystemConfiguration.framework */; };
+		5D90B5EF23352C3A00179F7F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A950D2CC21126D600029AABC /* Security.framework */; };
+		5D90B5F023352C4300179F7F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A950D2C721126D5F0029AABC /* CFNetwork.framework */; };
+		5D90B5F123352C5100179F7F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A950D2D221126D610029AABC /* ImageIO.framework */; };
+		5D90B5F223352C5800179F7F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A950D2C921126D600029AABC /* StoreKit.framework */; };
+		5D90B5F423352C6100179F7F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D90B5F323352C6100179F7F /* WebKit.framework */; };
+		5D90B5FA2335301600179F7F /* libNotificarePushLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D90B5F523352C8100179F7F /* libNotificarePushLib.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		A8A69242FDEC4157BB0ACC21 /* libNotificarePushLibReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B9073F612F47B286CB4411 /* libNotificarePushLibReactNative.a */; };
 		A93C6DDB2242432200EC1EFD /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93C6DDA2242432200EC1EFD /* JavaScriptCore.framework */; };
 		A950D2D621126D610029AABC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A950D2C621126D5F0029AABC /* CoreGraphics.framework */; };
 		A950D2D721126D610029AABC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A950D2C721126D5F0029AABC /* CFNetwork.framework */; };
@@ -53,12 +79,7 @@
 		A950D2E421126D610029AABC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A950D2D421126D610029AABC /* CoreData.framework */; };
 		A950D2E521126D610029AABC /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A950D2D521126D610029AABC /* libicucore.tbd */; };
 		A950D2E721126DAD0029AABC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A950D2E621126DAC0029AABC /* Foundation.framework */; };
-		A950D2F9211271890029AABC /* DefaultTheme.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A950D2F5211271880029AABC /* DefaultTheme.bundle */; };
-		A950D2FA211271890029AABC /* Notificare.plist in Resources */ = {isa = PBXBuildFile; fileRef = A950D2F6211271880029AABC /* Notificare.plist */; };
-		A950D2FB211271890029AABC /* NotificareTags.plist in Resources */ = {isa = PBXBuildFile; fileRef = A950D2F7211271880029AABC /* NotificareTags.plist */; };
-		A950D2FC211271890029AABC /* NotificareManagedModels.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A950D2F8211271880029AABC /* NotificareManagedModels.bundle */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
-		A8A69242FDEC4157BB0ACC21 /* libNotificarePushLibReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B9073F612F47B286CB4411 /* libNotificarePushLibReactNative.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -272,6 +293,20 @@
 			remoteGlobalIDString = 3D3CD9321DE5FBEE00167DC4;
 			remoteInfo = "cxxreact-tvOS";
 		};
+		5D90B5C82335254300179F7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A339AB3455064319AE1B37FD /* NotificarePushLibReactNative.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5DA03AA11DD212270077017E;
+			remoteInfo = NotificarePushLibReactNative;
+		};
+		5D90B5DA23352B5C00179F7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D90B5D323352B5B00179F7F;
+			remoteInfo = notification;
+		};
 		5E9157321DD0AC6500FF2AA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */;
@@ -337,6 +372,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5D90B5E023352B5C00179F7F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5D90B5DC23352B5C00179F7F /* notification.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTActionSheet.xcodeproj; path = "../node_modules/react-native/Libraries/ActionSheetIOS/RCTActionSheet.xcodeproj"; sourceTree = "<group>"; };
@@ -360,9 +409,21 @@
 		2D02E47B1E0B4A5D006451C7 /* AwesomeProject-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AwesomeProject-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* AwesomeProject-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AwesomeProject-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D90B5CA2335259D00179F7F /* NotificareManagedModels.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NotificareManagedModels.bundle; sourceTree = "<group>"; };
+		5D90B5CB2335259D00179F7F /* DefaultTheme.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DefaultTheme.bundle; sourceTree = "<group>"; };
+		5D90B5CC2335259D00179F7F /* Notificare.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Notificare.plist; sourceTree = "<group>"; };
+		5D90B5D423352B5B00179F7F /* notification.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = notification.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D90B5D623352B5C00179F7F /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
+		5D90B5D723352B5C00179F7F /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
+		5D90B5D923352B5C00179F7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D90B5E123352BC800179F7F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5D90B5F323352C6100179F7F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		5D90B5F523352C8100179F7F /* libNotificarePushLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libNotificarePushLib.a; path = notification/libNotificarePushLib.a; sourceTree = "<group>"; };
+		5D90B5F723352D3C00179F7F /* libNotificarePushLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libNotificarePushLib.a; path = "../node_modules/notificare-push-lib-react-native/ios/Libraries/NotificarePushLib/libNotificarePushLib.a"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		A339AB3455064319AE1B37FD /* NotificarePushLibReactNative.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = NotificarePushLibReactNative.xcodeproj; path = "../node_modules/notificare-push-lib-react-native/ios/NotificarePushLibReactNative.xcodeproj"; sourceTree = "<group>"; };
 		A93C6DDA2242432200EC1EFD /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		A950D2C621126D5F0029AABC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A950D2C721126D5F0029AABC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -381,14 +442,9 @@
 		A950D2D421126D610029AABC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A950D2D521126D610029AABC /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		A950D2E621126DAC0029AABC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		A950D2F5211271880029AABC /* DefaultTheme.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DefaultTheme.bundle; sourceTree = "<group>"; };
-		A950D2F6211271880029AABC /* Notificare.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Notificare.plist; sourceTree = "<group>"; };
-		A950D2F7211271880029AABC /* NotificareTags.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NotificareTags.plist; sourceTree = "<group>"; };
-		A950D2F8211271880029AABC /* NotificareManagedModels.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NotificareManagedModels.bundle; sourceTree = "<group>"; };
 		A950D2FD211272250029AABC /* AwesomeProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = AwesomeProject.entitlements; path = AwesomeProject/AwesomeProject.entitlements; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
-		A339AB3455064319AE1B37FD /* NotificarePushLibReactNative.xcodeproj */ = {isa = PBXFileReference; name = "NotificarePushLibReactNative.xcodeproj"; path = "../node_modules/notificare-push-lib-react-native/ios/NotificarePushLibReactNative.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		B5B9073F612F47B286CB4411 /* libNotificarePushLibReactNative.a */ = {isa = PBXFileReference; name = "libNotificarePushLibReactNative.a"; path = "libNotificarePushLibReactNative.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		B5B9073F612F47B286CB4411 /* libNotificarePushLibReactNative.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libNotificarePushLibReactNative.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -457,6 +513,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D90B5D123352B5B00179F7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D90B5FA2335301600179F7F /* libNotificarePushLib.a in Frameworks */,
+				5D90B5F423352C6100179F7F /* WebKit.framework in Frameworks */,
+				5D90B5F223352C5800179F7F /* StoreKit.framework in Frameworks */,
+				5D90B5F123352C5100179F7F /* ImageIO.framework in Frameworks */,
+				5D90B5F023352C4300179F7F /* CFNetwork.framework in Frameworks */,
+				5D90B5EF23352C3A00179F7F /* Security.framework in Frameworks */,
+				5D90B5EE23352C2E00179F7F /* SystemConfiguration.framework in Frameworks */,
+				5D90B5ED23352C2200179F7F /* MapKit.framework in Frameworks */,
+				5D90B5EC23352C1300179F7F /* CoreGraphics.framework in Frameworks */,
+				5D90B5EB23352C0A00179F7F /* Foundation.framework in Frameworks */,
+				5D90B5EA23352BFD00179F7F /* UIKit.framework in Frameworks */,
+				5D90B5E923352BF600179F7F /* libicucore.tbd in Frameworks */,
+				5D90B5E823352BEE00179F7F /* MessageUI.framework in Frameworks */,
+				5D90B5E723352BE700179F7F /* MobileCoreServices.framework in Frameworks */,
+				5D90B5E623352BE200179F7F /* UserNotifications.framework in Frameworks */,
+				5D90B5E523352BDC00179F7F /* PassKit.framework in Frameworks */,
+				5D90B5E423352BD500179F7F /* CoreData.framework in Frameworks */,
+				5D90B5E323352BCF00179F7F /* CoreLocation.framework in Frameworks */,
+				5D90B5E223352BC900179F7F /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,11 +627,10 @@
 		13B07FAE1A68108700A75B9A /* AwesomeProject */ = {
 			isa = PBXGroup;
 			children = (
+				5D90B5CB2335259D00179F7F /* DefaultTheme.bundle */,
+				5D90B5CC2335259D00179F7F /* Notificare.plist */,
+				5D90B5CA2335259D00179F7F /* NotificareManagedModels.bundle */,
 				A950D2FD211272250029AABC /* AwesomeProject.entitlements */,
-				A950D2F5211271880029AABC /* DefaultTheme.bundle */,
-				A950D2F6211271880029AABC /* Notificare.plist */,
-				A950D2F8211271880029AABC /* NotificareManagedModels.bundle */,
-				A950D2F7211271880029AABC /* NotificareTags.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -587,6 +668,10 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D90B5F523352C8100179F7F /* libNotificarePushLib.a */,
+				5D90B5F723352D3C00179F7F /* libNotificarePushLib.a */,
+				5D90B5F323352C6100179F7F /* WebKit.framework */,
+				5D90B5E123352BC800179F7F /* AVFoundation.framework */,
 				A93C6DDA2242432200EC1EFD /* JavaScriptCore.framework */,
 				A950D2E621126DAC0029AABC /* Foundation.framework */,
 				A950D2C721126D5F0029AABC /* CFNetwork.framework */,
@@ -608,6 +693,24 @@
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5D90B5C52335254300179F7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5D90B5C92335254300179F7F /* libNotificarePushLibReactNative.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5D90B5D523352B5C00179F7F /* notification */ = {
+			isa = PBXGroup;
+			children = (
+				5D90B5D623352B5C00179F7F /* NotificationService.h */,
+				5D90B5D723352B5C00179F7F /* NotificationService.m */,
+				5D90B5D923352B5C00179F7F /* Info.plist */,
+			);
+			path = notification;
 			sourceTree = "<group>";
 		};
 		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
@@ -663,6 +766,7 @@
 				13B07FAE1A68108700A75B9A /* AwesomeProject */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* AwesomeProjectTests */,
+				5D90B5D523352B5C00179F7F /* notification */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				A950D29B21126C3B0029AABC /* Recovered References */,
@@ -679,6 +783,7 @@
 				00E356EE1AD99517003FC87E /* AwesomeProjectTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* AwesomeProject-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* AwesomeProject-tvOSTests.xctest */,
+				5D90B5D423352B5B00179F7F /* notification.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -686,7 +791,7 @@
 		A950D29B21126C3B0029AABC /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				C9BB562692454208A0B17DDC /* libNotificarePushLibReactNative.a */,
+				B5B9073F612F47B286CB4411 /* libNotificarePushLibReactNative.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -729,10 +834,12 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				5D90B5E023352B5C00179F7F /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5D90B5DB23352B5C00179F7F /* PBXTargetDependency */,
 			);
 			name = AwesomeProject;
 			productName = "Hello World";
@@ -775,6 +882,23 @@
 			productReference = 2D02E4901E0B4A5D006451C7 /* AwesomeProject-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		5D90B5D323352B5B00179F7F /* notification */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D90B5DD23352B5C00179F7F /* Build configuration list for PBXNativeTarget "notification" */;
+			buildPhases = (
+				5D90B5D023352B5B00179F7F /* Sources */,
+				5D90B5D123352B5B00179F7F /* Frameworks */,
+				5D90B5D223352B5B00179F7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = notification;
+			productName = notification;
+			productReference = 5D90B5D423352B5B00179F7F /* notification.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -813,6 +937,11 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2D02E47A1E0B4A5D006451C7;
 					};
+					5D90B5D323352B5B00179F7F = {
+						CreatedOnToolsVersion = 10.3;
+						DevelopmentTeam = E3J9DDFVP4;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "AwesomeProject" */;
@@ -820,6 +949,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -827,6 +957,10 @@
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = 5D90B5C52335254300179F7F /* Products */;
+					ProjectRef = A339AB3455064319AE1B37FD /* NotificarePushLibReactNative.xcodeproj */;
+				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
@@ -882,6 +1016,7 @@
 				00E356ED1AD99517003FC87E /* AwesomeProjectTests */,
 				2D02E47A1E0B4A5D006451C7 /* AwesomeProject-tvOS */,
 				2D02E48F1E0B4A5D006451C7 /* AwesomeProject-tvOSTests */,
+				5D90B5D323352B5B00179F7F /* notification */,
 			);
 		};
 /* End PBXProject section */
@@ -1083,6 +1218,13 @@
 			remoteRef = 3DAD3EAA1DF850E9000B6D8A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		5D90B5C92335254300179F7F /* libNotificarePushLibReactNative.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libNotificarePushLibReactNative.a;
+			remoteRef = 5D90B5C82335254300179F7F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1160,12 +1302,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A950D2F9211271890029AABC /* DefaultTheme.bundle in Resources */,
-				A950D2FC211271890029AABC /* NotificareManagedModels.bundle in Resources */,
+				5D90B5CF2335259D00179F7F /* Notificare.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				A950D2FA211271890029AABC /* Notificare.plist in Resources */,
+				5D90B5CD2335259D00179F7F /* NotificareManagedModels.bundle in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				A950D2FB211271890029AABC /* NotificareTags.plist in Resources */,
+				5D90B5CE2335259D00179F7F /* DefaultTheme.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1178,6 +1319,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2D02E48E1E0B4A5D006451C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D90B5D223352B5B00179F7F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1252,6 +1400,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5D90B5D023352B5B00179F7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D90B5D823352B5C00179F7F /* NotificationService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1264,6 +1420,11 @@
 			isa = PBXTargetDependency;
 			target = 2D02E47A1E0B4A5D006451C7 /* AwesomeProject-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
+		};
+		5D90B5DB23352B5C00179F7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5D90B5D323352B5B00179F7F /* notification */;
+			targetProxy = 5D90B5DA23352B5C00179F7F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1527,6 +1688,91 @@
 			};
 			name = Release;
 		};
+		5D90B5DE23352B5C00179F7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = E3J9DDFVP4;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../node_modules/notificare-push-lib-react-native/ios/Libraries/NotificarePushLib/**";
+				INFOPLIST_FILE = notification/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/notification",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = re.notifica.notificare.notification;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5D90B5DF23352B5C00179F7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = E3J9DDFVP4;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../node_modules/notificare-push-lib-react-native/ios/Libraries/NotificarePushLib/**";
+				INFOPLIST_FILE = notification/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/notification",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = re.notifica.notificare.notification;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		83CBBA201A601CBA00E9B192 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1640,6 +1886,15 @@
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
 				2D02E49A1E0B4A5E006451C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D90B5DD23352B5C00179F7F /* Build configuration list for PBXNativeTarget "notification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D90B5DE23352B5C00179F7F /* Debug */,
+				5D90B5DF23352B5C00179F7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

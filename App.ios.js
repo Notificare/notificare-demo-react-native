@@ -104,7 +104,7 @@ export default class App extends Component {
 
     renderRow ({item}) {
         return (
-            <TouchableHighlight>
+            <TouchableHighlight onPress={() => Notificare.presentInboxItem(item)}>
                 <View>
                     <View style={styles.row}>
                         <Text style={styles.text}>
