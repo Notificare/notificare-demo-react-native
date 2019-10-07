@@ -1,5 +1,5 @@
 rootProject.name = 'AwesomeProject'
 include ':notificare-push-lib-react-native'
 project(':notificare-push-lib-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/notificare-push-lib-react-native/android')
-
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
 include ':app'

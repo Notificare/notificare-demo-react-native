@@ -30,9 +30,9 @@ export default class App extends Component {
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
 
-        console.log("componentWillMount");
+        console.log("componentDidMount");
 
         Notificare.launch();
 
@@ -55,7 +55,9 @@ export default class App extends Component {
                 'message': 'We need your location so we can send you relevant push notifications'
             });
             if (granted) {
-                Notificare.startLocationUpdates()
+                Notificare.startLocationUpdates();
+            } else {
+                await Notificare.clearLocation();
             }
             try {
                 await Notificare.login("joris@notifica.re", "Test123!")

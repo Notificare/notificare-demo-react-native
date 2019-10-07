@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2015-present, Facebook, Inc.
+ * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
 
 #import "AppDelegate.h"
-#import "NotificareReactNativeIOS.h"
+#import <NotificareReactNativeIOS.h>
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
@@ -42,46 +42,35 @@
 #endif
 }
 
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    [NotificareReactNativeIOS handleOpenURL:url withOptions:nil];
-    return YES;
+//Required to handle deep links
+- (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
+  [NotificareReactNativeIOS handleOpenURL:url withOptions:options];
+  return YES;
 }
 
-- (void)notificarePushLib:(NotificarePushLib *)library didReceiveLaunchURL:(NSURL *)launchURL {
-    [NotificareReactNativeIOS handleOpenURL:launchURL withOptions:nil];
-}
-
-
--(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-    [NotificareReactNativeIOS handleOpenURL:url withOptions:options];
-    return YES;
-}
-
-#pragma APNS Delegates
 //Required to handle device registrations
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(nonnull NSData *)deviceToken {
-	[NotificareReactNativeIOS didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+  [NotificareReactNativeIOS didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
+//Required to handle notifications
 -(void)application:(UIApplication *)application didReceiveRemoteNotification:(nonnull NSDictionary *)userInfo fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHandler {
 
-	[NotificareReactNativeIOS didReceiveRemoteNotification:userInfo completionHandler:^(id  _Nullable response, NSError * _Nullable error) {
-		if (!error) {
-			completionHandler(UIBackgroundFetchResultNewData);
-		} else {
-			completionHandler(UIBackgroundFetchResultNoData);
-		}
-	}];
+  [NotificareReactNativeIOS didReceiveRemoteNotification:userInfo completionHandler:^(id  _Nullable response, NSError * _Nullable error) {
+    if (!error) {
+      completionHandler(UIBackgroundFetchResultNewData);
+    } else {
+      completionHandler(UIBackgroundFetchResultNoData);
+    }
+  }];
 
 }
 
-/*
- * iOS 9 and below requires this delegate to handle lock screen actions
- */
--(void)application:(UIApplication *)application handleActionWithIdentifier:(nullable NSString *)identifier forRemoteNotification:(nonnull NSDictionary *)userInfo withResponseInfo:(nonnull NSDictionary *)responseInfo completionHandler:(nonnull void (^)())completionHandler{
-	[[NotificarePushLib shared] handleActionWithIdentifier:identifier forRemoteNotification:userInfo withResponseInfo:responseInfo completionHandler:^(id  _Nullable response, NSError * _Nullable error) {
-		completionHandler();
-	}];
+//Required to handle actions in iOS 9 and below
+-(void)application:(UIApplication *)application handleActionWithIdentifier:(nullable NSString *)identifier forRemoteNotification:(nonnull NSDictionary *)userInfo withResponseInfo:(nonnull NSDictionary *)responseInfo completionHandler:(nonnull void (^)(void))completionHandler{
+  [[NotificarePushLib shared] handleActionWithIdentifier:identifier forRemoteNotification:userInfo withResponseInfo:responseInfo completionHandler:^(id  _Nullable response, NSError * _Nullable error) {
+    completionHandler();
+  }];
 }
 
 @end

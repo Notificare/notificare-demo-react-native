@@ -1,19 +1,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.awesomeproject">
+  package="com.awesomeproject">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 
     <application
       android:name=".MainApplication"
       android:label="@string/app_name"
       android:icon="@mipmap/ic_launcher"
+      android:roundIcon="@mipmap/ic_launcher_round"
       android:allowBackup="false"
       android:theme="@style/AppTheme">
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"
-        android:launchMode="singleTop"
         android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
         android:windowSoftInputMode="adjustResize">
         <intent-filter>
@@ -35,44 +34,45 @@
               <category android:name="android.intent.category.DEFAULT" />
               <category android:name="android.intent.category.BROWSABLE" />
               <data
-                      android:host="push.notifica.re"
-                      android:pathPrefix="/oauth/resetpassword/${notificareAppId}"
-                      android:scheme="https"/>
+                  android:host="push.notifica.re"
+                  android:pathPrefix="/oauth/resetpassword/${notificareAppId}"
+                  android:scheme="https"/>
           </intent-filter>
           <intent-filter>
               <action android:name="android.intent.action.VIEW" />
               <category android:name="android.intent.category.DEFAULT" />
               <category android:name="android.intent.category.BROWSABLE" />
               <data
-                      android:host="push.notifica.re"
-                      android:pathPrefix="/oauth/validate/${notificareAppId}"
-                      android:scheme="https"/>
+                  android:host="push.notifica.re"
+                  android:pathPrefix="/oauth/validate/${notificareAppId}"
+                  android:scheme="https"/>
           </intent-filter>
+
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
         <activity
-                android:name="re.notifica.ui.NotificationActivity"
-                android:theme="@style/AppTheme.Translucent"
-                android:configChanges="keyboardHidden|orientation|screenSize"
-                android:hardwareAccelerated="true" />
+            android:name="re.notifica.ui.NotificationActivity"
+            android:theme="@style/AppTheme.Translucent"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:hardwareAccelerated="true" />
 
         <activity
-                android:name="re.notifica.ui.PassbookActivity"
-                android:configChanges="keyboardHidden|orientation|screenSize"
-                android:hardwareAccelerated="true">
+            android:name="re.notifica.ui.PassbookActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:hardwareAccelerated="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data
-                        android:host="push.notifica.re"
-                        android:pathPrefix="/pass/forapplication/${notificareAppId}"
-                        android:scheme="https" />
+                    android:host="push.notifica.re"
+                    android:pathPrefix="/pass/forapplication/${notificareAppId}"
+                    android:scheme="https" />
             </intent-filter>
         </activity>
         <meta-data
-                android:name="re.notifica.metadata.UrlSchemes"
-                android:resource="@array/url_schemes" />
+            android:name="re.notifica.metadata.UrlSchemes"
+            android:resource="@array/url_schemes" />
     </application>
 
 </manifest>
