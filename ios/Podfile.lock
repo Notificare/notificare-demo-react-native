@@ -19,9 +19,9 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
-  - notificare-push-lib (2.2.0)
-  - notificare-push-lib-react-native (2.1.0-beta.0):
-    - notificare-push-lib (= 2.2.0)
+  - notificare-push-lib (2.2.2)
+  - notificare-push-lib-react-native (2.1.2-beta.0):
+    - notificare-push-lib (= 2.2.2)
     - React
   - RCTRequired (0.61.2)
   - RCTTypeSafety (0.61.2):
@@ -320,8 +320,8 @@ SPEC CHECKSUMS:
   FBReactNativeSpec: 5a764c60abdc3336a213e5310c40b74741f32839
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
-  notificare-push-lib: 6e608778402f17bcd5033716c1ac310b9451d70f
-  notificare-push-lib-react-native: a0b96e0210f221813b5ee2dae6a0eba29f9d2d56
+  notificare-push-lib: 9aff32d56a00977305fc0e474e1486b23549c11e
+  notificare-push-lib-react-native: 9fec4350239903e9dfd2a55e93ab12d29446e0c0
   RCTRequired: c639d59ed389cfb1f1203f65c2ea946d8ec586e2
   RCTTypeSafety: dc23fb655d6c77667c78e327bf661bc11e3b8aec
   React: 7e586e5d7bec12b91c1a096826b0fc9ab1da7865
@@ -343,6 +343,6 @@ SPEC CHECKSUMS:
   ReactCommon: 5848032ed2f274fcb40f6b9ec24067787c42d479
   Yoga: 14927e37bd25376d216b150ab2a561773d57911f
 
-PODFILE CHECKSUM: 143daa1440ec242f22e8282227e8f5d25971a826
+PODFILE CHECKSUM: 5a0708c67b2745fa3222a417e1a7ee5017b8b225
 
 COCOAPODS: 1.7.5
