@@ -10,7 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "notificare-push-lib-react-native": "2.1.2",
+    "notificare-push-lib-react-native": "^2.2.1-beta.0",
     "react": "16.9.0",
     "react-native": "0.61.2"
   },
