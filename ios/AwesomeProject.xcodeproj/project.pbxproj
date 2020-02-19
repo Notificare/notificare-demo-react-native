@@ -690,6 +690,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7A341D1C51273F1685BAB7BD /* Pods-AwesomeProject.release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AwesomeProject/AwesomeProject.entitlements;
 				CURRENT_PROJECT_VERSION = 1;

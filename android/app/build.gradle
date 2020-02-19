@@ -181,7 +181,7 @@ android {
 
 dependencies {
     implementation project(':notificare-push-lib-react-native')
-    implementation "re.notifica:notificare-location:2.2.0"
+    implementation "re.notifica:notificare-location:2.2.1"
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
