@@ -50,6 +50,9 @@ target 'AwesomeProject' do
 
 
 
+
+
+
   pod 'notificare-push-lib-react-native', :path => '../node_modules/notificare-push-lib-react-native'
 
   target 'AwesomeProjectTests' do
