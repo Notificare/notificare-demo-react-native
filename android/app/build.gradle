@@ -131,6 +131,7 @@ android {
         applicationId "com.awesomeproject"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
         manifestPlaceholders = [ notificareAppId: rootProject.ext.notificareAppId ]
@@ -180,10 +181,11 @@ android {
 }
 
 dependencies {
-    implementation project(':notificare-push-lib-react-native')
-    implementation "re.notifica:notificare-location:2.2.1"
+    implementation "androidx.multidex:multidex:2.0.1"
+    implementation "re.notifica:notificare-location:2.2.2"
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";
